@@ -1,4 +1,12 @@
 #!/usr/bin/env php
 <?php
 
-echo 'Welcome to the Brain Games!';
+$autoload = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoload)) {
+    require_once $autoload;
+}
+
+// Brain\Games\Cli\menu;
+
+// echo 'Welcome to the Brain Games!';
