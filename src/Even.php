@@ -6,30 +6,36 @@ use function Brain\Games\Cli\greeting;
 use function cli\line;
 use function cli\prompt;
 
-function even()
+function main($answers = 3)
 {
     $name = greeting();
-    $answers = 3;
+    even();
+}
+
+function even($name = '', $answers = 3)
+{
     line('Answer "yes" if the number is even, otherwise answer "no".');
+
     for ($i = 0; $i < $answers; $i++) {
-        $number = rand();
         line("Question: %s", $number);
+
+        $answer = 'yes';
         $userAnswer = prompt('Your answer');
         $passed = true;
+        $number = rand();
 
         if ($number % 2) {
             $answer = 'no';
-        } else {
-            $answer = 'yes';
         }
 
-        if ($answer === $userAnswer) {
-            line('Correct!');
-        } else {
+        if ($answer !== $userAnswer) {
             $passed = false;
+
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $answer);
             break;
         }
+
+        line('Correct!');
     }
 
     if ($passed) {
