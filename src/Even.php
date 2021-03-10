@@ -11,7 +11,7 @@ function even()
     $name = greeting();
     $answers = 3;
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    for($i = 0; $i < $answers; $i++) {
+    for ($i = 0; $i < $answers; $i++) {
         $number = rand();
         line("Question: %s", $number);
         $userAnswer = prompt('Your answer');
@@ -32,7 +32,7 @@ function even()
         }
     }
 
-    if($passed) {
+    if ($passed) {
         line('Congratulations, %s!', $name);
     } else {
         line("Let's try again, %s!", $name);
